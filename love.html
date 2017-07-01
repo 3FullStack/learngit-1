@@ -1,0 +1,91 @@
+<!doctype html>
+<html>
+   <head>
+    <meta charset="GBK"><!--编码集 2005 gbk gb2312 utf-8-->
+    <meta name="Keywords"content="">
+    <meta name="Description"content="描述信息">
+    <title>520表白</title>
+	<!--css样式 层叠式样式表--><!--margin内边距padding盒子与内容-->
+	<style type="text/css">
+	  *{margin:0;padding:0;}
+	  body{background:url("images/3c.jpg");background-size:cover;}
+	  .top{width:400px;height:100px;margin:60px auto;padding:0;font-size:30px;font-family:"微软雅黑";}
+	  
+	  
+	  .box{width:310px;height:310px;margin:auto;perspective:800px;}
+	  .box .pic{position:relative;transform-style:preserve-3d;animation:play 10s linear infinite;}
+	  .box ul li{list-style:none;position:absolute;top:0;left:0;}
+
+
+	  #text{width:500px;height:100px;color:#00ffff;margin:auto;font-size:18px;}
+	  @keyframes play{
+	  from{transform:rotateY(0deg);}
+	  to{transform:rotateY(360deg);}
+	  }
+	</style>
+   </head>
+
+ <body>
+      <!--div盒子 容器 层-->
+      <!--以class命名的样式为类样式-->
+      <div class="top">
+	  <marquee behavior=alternate>时光不老 我们不散</marquee>
+	  </div>
+	  <div class="box">
+	  <div class="pic">
+	  <ul>
+	  <!--图片标签四要素 src路径   alt描述-->
+	  <li><img src="images/1.png"height=""width=""alt=""/></li>
+	  <li><img src="images/2.png"height="x"width=""alt=""/></li>
+	  <li><img src="images/3.png"height=""width=""alt=""/></li>
+	  <li><img src="images/4.png"height=""width=""alt=""/></li>
+	  <li><img src="images/5.png"height=""width=""alt=""/></li>
+	  <li><img src="images/6.png"height=""width=""alt=""/></li>
+	  </ul>
+
+	  </div>
+	  </div>
+	  <div id="snowspawner"></div>
+	  <div id="text"></div>
+	  <embed src="Carly Rae Jepsen - Call Me Maybe.mp3"hidden="true"/>
+	  <script src="js/jquery-2.1.1.min.js" charset="utf-8"></script>
+	  <script src="js/letItSnow.js" charset="utf-8"></script>
+	  <script src="js/jquery-ui.min.js" charset="utf-8"></script>
+	  
+
+
+	  
+	  <script src="js/jquery.1.11.3.min.js"></script>
+	  
+      
+	  <script>
+	  $(".pic ul li").each(function(i){ 
+		  $(this).css({"transform":"rotateY("+60*i+"deg)translateZ(216px)"});
+	  });
+	   $(function() {
+    $('#snowspawner').letItSnow({
+    fall_time:5000
+  });
+})   
+
+
+      var i=0;
+	  var str="能够遇见你是我最大的幸运，有了你生活变得丰富多彩，有了你世界变得如此迷人，你是我的世界我的世界是你。对我来说，不是在最美好的时光遇见了你，而是遇见你以后都是最美好的时光。";
+	  window.onload=function typing(){
+		  var mydiv=document.getElementById("text");
+	      mydiv.innerHTML += str.charAt(i);
+		  i++;
+		  console.log(i)
+		  var id =setTimeout(typing,100);
+		  if(i==str.length){
+			  clearTimeout(id);
+		  }
+	 }
+	
+
+
+
+	  </script>
+
+ </body>
+</html>
